@@ -2,7 +2,7 @@
 //  SwipeMenu.swift
 //  AcademyRecruit
 //
-//  Created by Jakub Chodara on 06/10/2022.
+//  Created by Jakub Chodara on 17/11/2023.
 //
 
 import SwiftUI
