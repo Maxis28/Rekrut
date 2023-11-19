@@ -22,7 +22,7 @@ struct Home : View{
                             .foregroundColor(Color.white)
                         
                         HStack(spacing: 10) {
-                            Text("Academy Recruiter")
+                            Text("Rekrut")
                                 .font(.callout)
                                 .fontWeight(.heavy)
                                 .foregroundColor(.white)
