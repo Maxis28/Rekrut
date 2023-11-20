@@ -1,8 +1,8 @@
 //
 //  lastTrainingView.swift
-//  AcademyRecruit
+//  Recruit
 //
-//  Created by Jakub Chodara on 10/10/2022.
+//  Created by Jakub Chodara on 20.11.2023.
 //
 
 import SwiftUI

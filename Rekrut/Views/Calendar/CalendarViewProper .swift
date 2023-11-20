@@ -1,8 +1,8 @@
 //
 //  CalendarViewProper .swift
-//  AcademyRecruit
+//  Recruit
 //
-//  Created by Jakub Chodara on 06/10/2022.
+//  Created by Jakub Chodara on 20.11.2023.
 //
 
 import SwiftUI

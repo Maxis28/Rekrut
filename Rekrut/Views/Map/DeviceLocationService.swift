@@ -1,8 +1,8 @@
 //
 //  DeviceLocationService.swift
-//  device-location-ios
+//  Recruit
 //
-//  Created by Kilo Loco on 12/7/21.
+//  Created by Jakub Chodara on 20.11.2023.
 //
 
 import Combine

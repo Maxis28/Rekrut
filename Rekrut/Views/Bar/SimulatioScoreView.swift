@@ -1,8 +1,8 @@
 //
 //  SimulatioScoreView.swift
-//  ForestSurvive
+//  Recruit
 //
-//  Created by Jakub Chodara on 02/10/2022.
+//  Created by Jakub Chodara on 20.11.2023.
 //
 import Foundation
 import SwiftUI

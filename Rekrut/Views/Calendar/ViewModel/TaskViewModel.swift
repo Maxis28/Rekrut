@@ -1,8 +1,8 @@
 //
 //  TaskViewModel.swift
-//  MVVM
+//  Recruit
 //
-//  Created by Jakub Chodara on 05/10/2022.
+//  Created by Jakub Chodara on 20.11.2023.
 //
 
 import SwiftUI
@@ -10,13 +10,13 @@ import SwiftUI
 class TaskViewModel: ObservableObject{
     
     @Published var storedTasks: [Task1] = [
-        Task1(taskTitle: "Start of rejestration", taskDescription: "Our IRK system is starting working that day ", taskDate: .init(timeIntervalSince1970: 1646089200)),
-        Task1(taskTitle: "End of rejestrtion", taskDescription: "Our IRK system is closeing that day", taskDate: .init(timeIntervalSince1970: 1689026400)),
-        Task1(taskTitle: "Start of PE exams", taskDescription: "Bring formula from your doc that confirm you can participate", taskDate: .init(timeIntervalSince1970: 1689026400)),
-        Task1(taskTitle: "End of PE exams", taskDescription: "We hope you succseed", taskDate: .init(timeIntervalSince1970: 1689372000)),
-        Task1(taskTitle: "Start Matura", taskDescription: "First day that you can bring matura for us", taskDate: .init(timeIntervalSince1970: 1689026400)),
-        Task1(taskTitle: "Finish Matura", taskDescription: "Last day that you can bring matura for us", taskDate: .init(timeIntervalSince1970: 1689372000)),
-        Task1(taskTitle: "Resoults", taskDescription: "That day you can look at you IRK account and check if you succseed", taskDate: .init(timeIntervalSince1970: 1689631200)),
+        Task1(taskTitle: "Start of rejestration", taskDescription: "Our IRK system is starting working that day ", taskDate: .init(timeIntervalSince1970: 1704240000)),
+        Task1(taskTitle: "End of rejestrtion", taskDescription: "Our IRK system is closeing that day", taskDate: .init(timeIntervalSince1970: 1720656000)),
+        Task1(taskTitle: "Start of PE exams", taskDescription: "Bring formula from your doc that confirm you can participate", taskDate: .init(timeIntervalSince1970: 1720656000)),
+        Task1(taskTitle: "End of PE exams", taskDescription: "We hope you succseed", taskDate: .init(timeIntervalSince1970: 1721001600)),
+        Task1(taskTitle: "Start Matura", taskDescription: "First day that you can bring matura for us", taskDate: .init(timeIntervalSince1970: 1720656000)),
+        Task1(taskTitle: "Finish Matura", taskDescription: "Last day that you can bring matura for us", taskDate: .init(timeIntervalSince1970: 1721001600)),
+        Task1(taskTitle: "Resoults", taskDescription: "That day you can look at you IRK account and check if you succseed", taskDate: .init(timeIntervalSince1970: 1721260800)),
     ]
     
     //Curr week days
