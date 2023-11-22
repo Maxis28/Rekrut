@@ -42,6 +42,8 @@
 		C9B8542E2B07820800BFB07A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8542D2B07820800BFB07A /* ContentView.swift */; };
 		C9B854302B07820900BFB07A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B8542F2B07820900BFB07A /* Assets.xcassets */; };
 		C9B854342B07820900BFB07A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B854332B07820900BFB07A /* Preview Assets.xcassets */; };
+		C9EC5B722B0CB688004DF5CC /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC5B712B0CB688004DF5CC /* ApiRequest.swift */; };
+		C9EC5B742B0CC6DE004DF5CC /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC5B732B0CC6DE004DF5CC /* Encryption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		C9B8542F2B07820900BFB07A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9B854312B07820900BFB07A /* Rekrut.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rekrut.entitlements; sourceTree = "<group>"; };
 		C9B854332B07820900BFB07A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9EC5B712B0CB688004DF5CC /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		C9EC5B732B0CC6DE004DF5CC /* Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,14 +222,24 @@
 				C937C6292B0BCF2900FAA766 /* TrainingView.swift */,
 				C937C62A2B0BCF2A00FAA766 /* TrainingViewModel.swift */,
 				C937C62C2B0BCF2A00FAA766 /* WebView.swift */,
+				C937C6392B0BD7A700FAA766 /* Register.swift */,
+				C9EC5B702B0CB676004DF5CC /* API */,
 				C937C5EC2B0BCEFF00FAA766 /* Bar */,
 				C937C5F12B0BCEFF00FAA766 /* Calendar */,
 				C937C6092B0BCEFF00FAA766 /* DataBase */,
 				C937C5FC2B0BCEFF00FAA766 /* FitnessCalc */,
 				C937C5F72B0BCEFF00FAA766 /* Map */,
-				C937C6392B0BD7A700FAA766 /* Register.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C9EC5B702B0CB676004DF5CC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C9EC5B712B0CB688004DF5CC /* ApiRequest.swift */,
+				C9EC5B732B0CC6DE004DF5CC /* Encryption.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,9 +325,11 @@
 				C9B8542E2B07820800BFB07A /* ContentView.swift in Sources */,
 				C937C6362B0BCF2A00FAA766 /* MainPageView.swift in Sources */,
 				C937C63A2B0BD7A700FAA766 /* Register.swift in Sources */,
+				C9EC5B742B0CC6DE004DF5CC /* Encryption.swift in Sources */,
 				C937C61E2B0BCEFF00FAA766 /* HRmaxView.swift in Sources */,
 				C937C62F2B0BCF2A00FAA766 /* TrainingModel.swift in Sources */,
 				C937C60E2B0BCEFF00FAA766 /* Localization.swift in Sources */,
+				C9EC5B722B0CB688004DF5CC /* ApiRequest.swift in Sources */,
 				C9B8542C2B07820800BFB07A /* RekrutApp.swift in Sources */,
 				C937C6202B0BCEFF00FAA766 /* BmiCalc.swift in Sources */,
 				C937C6302B0BCF2A00FAA766 /* NewsView.swift in Sources */,
