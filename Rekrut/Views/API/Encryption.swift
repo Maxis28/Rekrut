@@ -8,7 +8,7 @@
 import Foundation
 
 func encryptCaesarCipher(_ plaintext: String, shift: Int) -> String {
-    let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    let characters = "0123456789"
     
     var encryptedText = ""
 

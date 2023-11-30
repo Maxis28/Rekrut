@@ -92,7 +92,7 @@ struct Register: View {
                         }
                     }
                     */
-             
+                    if(SelectedMetodIndex == 0){
                         postUser(metod: SelectedMetodIndex,name: name, surname: surname, pesel: PESELCODED, maturaPoints: Int(MaturaPoints)!){ responseString in
                             if let responseString = responseString {
                                 print("Response: \(responseString)")
@@ -103,7 +103,28 @@ struct Register: View {
                             }
                         }
 
-                  
+                    }else if(SelectedMetodIndex == 1){
+                        
+                        updateUserByPesel(pesel: PESELCODED, name: name, surname: surname, maturaPoints: Int(MaturaPoints)!) { result in
+                            switch result {
+                            case .success(let response):
+                                Response =  "Response: \(response)"
+                            case .failure(let error):
+                                Response = "Error: \(error)"
+                            }
+                        }
+                        
+                    }else{
+                        deleteUserByPesel(pesel: PESELCODED) { result in
+                            switch result {
+                            case .success(let response):
+                                Response = "Response: \(response)"
+                            case .failure(let error):
+                                Response = "Error: \(error)"
+                            }
+                        }
+                        
+                    }
                     
                         
                     

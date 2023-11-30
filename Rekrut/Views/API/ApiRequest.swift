@@ -55,13 +55,9 @@ func makeAPIRequest(metod: Int, url: URL, parameter1: String, parameter2: String
 func postUser(metod: Int,name: String, surname: String, pesel: String, maturaPoints: Int, completion: @escaping (String?) -> Void) {
     let baseUrl = "http://192.168.1.109:5000/api/"
     var urlString: String
-    if(metod == 0){
-         urlString = "\(baseUrl)post_User"
-    }else if(metod == 1){
-         urlString = "\(baseUrl)put_user"
-    }else{
-         urlString = "\(baseUrl)delete_user"
-    }
+ 
+    urlString = "\(baseUrl)post_User"
+   
   
     guard let url = URL(string: urlString) else {
         print("Invalid URL")
@@ -77,13 +73,9 @@ func postUser(metod: Int,name: String, surname: String, pesel: String, maturaPoi
     ]
 
     var request = URLRequest(url: url)
-    if(metod == 0){
-        request.httpMethod = "POST"
-    }else if(metod == 1){
-        request.httpMethod = "PUT"
-    }else{
-        request.httpMethod = "DELETE"
-    }
+    
+    request.httpMethod = "POST"
+    
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
     do {
@@ -109,4 +101,74 @@ func postUser(metod: Int,name: String, surname: String, pesel: String, maturaPoi
         print("Error encoding JSON: \(error.localizedDescription)")
         completion(nil)
     }
+}
+
+
+func deleteUserByPesel(pesel: String, completion: @escaping (Result<String, Error>) -> Void) {
+    let url = "http://192.168.1.109:5000/api/delete_user_by_pesel/\(pesel)"
+
+    var request = URLRequest(url: URL(string: url)!)
+    request.httpMethod = "DELETE"
+
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        if let error = error {
+            completion(.failure(error))
+            return
+        }
+
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            completion(.failure(NSError(domain: "HTTP Response Error", code: 0, userInfo: nil)))
+            return
+        }
+
+        if let data = data, let responseString = String(data: data, encoding: .utf8) {
+            completion(.success(responseString))
+        } else {
+            completion(.failure(NSError(domain: "Data Error", code: 0, userInfo: nil)))
+        }
+    }
+
+    task.resume()
+}
+
+
+func updateUserByPesel(pesel: String, name: String?, surname: String?, maturaPoints: Int?, completion: @escaping (Result<String, Error>) -> Void) {
+    let url = "http://192.168.1.109:5000/api/update_user_by_pesel/\(pesel)"
+
+    var request = URLRequest(url: URL(string: url)!)
+    request.httpMethod = "PUT"
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+    let parameters: [String: Any] = [
+        "name": name ?? "",
+        "surname": surname ?? "",
+        "matura_points": maturaPoints ?? 0
+    ]
+
+    do {
+        request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
+    } catch {
+        completion(.failure(error))
+        return
+    }
+
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        if let error = error {
+            completion(.failure(error))
+            return
+        }
+
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            completion(.failure(NSError(domain: "HTTP Response Error", code: 0, userInfo: nil)))
+            return
+        }
+
+        if let data = data, let responseString = String(data: data, encoding: .utf8) {
+            completion(.success(responseString))
+        } else {
+            completion(.failure(NSError(domain: "Data Error", code: 0, userInfo: nil)))
+        }
+    }
+
+    task.resume()
 }
