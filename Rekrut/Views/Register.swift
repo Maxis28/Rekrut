@@ -78,8 +78,8 @@ struct Register: View {
                    
                    
                     let PESELCODED = encryptCaesarCipher(PESEL, shift: 43)
-                    
-                    let apiUrl = URL(string: "http://127.0.0.1:5000/api/receive_values")!
+                    /*
+                    let apiUrl = URL(string: "http://192.168.1.109:5000/api/receive_values")!
 
                     makeAPIRequest(metod: SelectedMetodIndex ,url: apiUrl, parameter1: name, parameter2: surname, parameter3: PESELCODED, parameter4: MaturaPoints) { result in
                         switch result {
@@ -91,9 +91,21 @@ struct Register: View {
                             Response = "\(error)"
                         }
                     }
+                    */
+             
+                        postUser(metod: SelectedMetodIndex,name: name, surname: surname, pesel: PESELCODED, maturaPoints: Int(MaturaPoints)!){ responseString in
+                            if let responseString = responseString {
+                                print("Response: \(responseString)")
+                                Response = "Response: \(responseString)"
+                            } else {
+                                print("Error occurred.")
+                                Response = "Error occurred:"
+                            }
+                        }
+
+                  
                     
-                   
-                    
+                        
                     
                     
                 }else{
